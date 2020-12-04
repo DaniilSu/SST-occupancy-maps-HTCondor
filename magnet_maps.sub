@@ -1,0 +1,13 @@
+executable = magnet_maps.sh
+request_memory = 8 GB
+#request_disk = 20 GB
+arguments = $(directory) $(ProcId) $(filename) $(finaldir)
+output = output/magnet_maps$(filename).$(ClusterId).$(ProcId).out
+error = error/magnet_maps$(filename).$(ClusterId).$(ProcId).err
+log = log/magnet_maps$(filename).$(ClusterId).log
+requirements = (OpSysAndVer =?= "CentOS7")
+#requirements = (CERNEnvironment =!= "qa")
+transfer_input_files = magnet_maps.py
+transfer_output_files = ""
++JobFlavour = "tomorrow"
+queue $(N)

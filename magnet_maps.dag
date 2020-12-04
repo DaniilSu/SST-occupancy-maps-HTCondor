@@ -1,0 +1,11 @@
+VARS ALL_NODES directory="MuonBackSim2018Alignment/1.6/MuonBackSim2018straw10file"
+VARS ALL_NODES N="67" 
+VARS ALL_NODES filename="_kinematic"
+VARS ALL_NODES finaldir="MuonBackSim2018Alignment/hit_maps/1.6"
+Job production magnet_maps.sub
+Job hadd magnet_hadd.sub
+DOT dagMagnet.dot UPDATE
+
+Parent production Child hadd
+# TODO delete individual files and dirs after successful hadd
+# TODO add flux_map and digitisation

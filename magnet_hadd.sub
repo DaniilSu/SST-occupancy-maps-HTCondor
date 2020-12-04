@@ -1,0 +1,9 @@
+executable              = magnet_hadd.sh
+arguments               = magnet_maps$(filename).root /eos/experiment/ship/user/dasukhon/$(finaldir) magnet_maps$(filename).root $(N)
+output                  = output/magnet_hadd$(filename).$(ClusterId).$(ProcId).out
+error                   = error/magnet_hadd$(filename).$(ClusterId).$(ProcId).err
+log                     = log/magnet_hadd$(filename).$(ClusterId).log
+requirements = (OpSysAndVer =?= "CentOS7")
+transfer_output_files = ""
++JobFlavour = "microcentury"
+queue
